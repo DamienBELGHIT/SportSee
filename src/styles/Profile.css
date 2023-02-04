@@ -1,0 +1,31 @@
+.profile-main {
+  margin: 0 90px;
+}
+
+.profile-main h1 {
+  font-size: 48px;
+}
+
+.profile-name {
+  color: red;
+}
+
+.keyDatas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#profile-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mini-charts {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.charts {
+  width: 80%;
+}

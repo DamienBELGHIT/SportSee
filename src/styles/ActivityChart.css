@@ -1,4 +1,19 @@
 .activity-chart {
   width: 100%;
   height: 320px;
+  background: #fbfbfb;
+  border-radius: 5px;
+  padding: 25px;
+}
+
+.recharts-legend-item {
+  margin: 10px;
+}
+
+.activity-tooltip {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 12px;
 }

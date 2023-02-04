@@ -1,0 +1,31 @@
+.average-session-chart {
+  width: 258px;
+  height: 263px;
+  background-color: #ff0000;
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  position: relative;
+}
+
+.average-session-chart h3 {
+  position: absolute;
+  top: 30px;
+  left: 34px;
+  font-size: 16px;
+  width: 50%;
+  margin: 0;
+}
+
+.average-session-tooltip {
+  background-color: white;
+  color: black;
+  padding: 1px 8px;
+  font-size: 12px;
+}
+
+.average-session-chart .chart-container {
+  width: 100%;
+  height: 160px;
+  position: absolute;
+  bottom: 0;
+}

@@ -1,0 +1,47 @@
+.keydata {
+  display: flex;
+  align-items: center;
+  padding: 32px;
+  background: #fbfbfb;
+}
+
+.keydata-description span {
+  color: #74798c;
+  font-size: 14px;
+}
+
+.keydata-description h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.keydata-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-right: 24px;
+  border-radius: 6px;
+}
+
+.keydata-icon.red {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.keydata-icon.blue {
+  background-color: rgba(74, 184, 255, 0.1);
+}
+
+.keydata-icon.yellow {
+  background-color: rgba(249, 206, 35, 0.1);
+}
+
+.keydata-icon.pink {
+  background-color: rgba(253, 81, 129, 0.1);
+}
+
+.keydata-icon img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
