@@ -5,7 +5,7 @@ import {
   PolarAngleAxis,
 } from "recharts"
 
-import "../styles/ScoreChart.css"
+import "./index.css"
 
 const CustomLabel = ({ cx, cy, value }) => {
   return (

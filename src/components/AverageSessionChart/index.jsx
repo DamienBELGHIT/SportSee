@@ -1,6 +1,6 @@
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts"
 
-import "../styles/AverageSessionChart.css"
+import "./index.css"
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {

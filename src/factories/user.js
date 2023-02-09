@@ -1,4 +1,4 @@
-export function userFactory(data) {
+export default function userFactory(data) {
   const main = data.main.data
 
   const performanceKinds = {

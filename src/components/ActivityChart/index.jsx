@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts"
 
-import "../styles/ActivityChart.css"
+import "./index.css"
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -31,8 +31,18 @@ export default function ActivityChart({ data }) {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data}>
           <CartesianGrid strokeDasharray="2 5" vertical={false} />
-          <XAxis dataKey="day" />
-          <YAxis />
+          <XAxis
+            dataKey="day"
+            tickLine={false}
+            tickFormatter={(value) => parseInt(value.split("-")[2])}
+            tick={{ fill: "#9B9EAC" }}
+          />
+          <YAxis
+            orientation="right"
+            axisLine={false}
+            tickLine={false}
+            tick={{ fill: "#9B9EAC" }}
+          />
           <Tooltip content={CustomTooltip} />
           <Legend
             payload={[

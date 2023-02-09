@@ -1,8 +1,9 @@
-import iconEnergy from "../assets/images/keyDataIcons/energy.svg"
-import iconBurger from "../assets/images/keyDataIcons/burger.svg"
-import iconChicken from "../assets/images/keyDataIcons/chicken.svg"
-import iconApple from "../assets/images/keyDataIcons/apple.svg"
-import "../styles/KeyData.css"
+import iconEnergy from "../../assets/images/keyDataIcons/energy.svg"
+import iconBurger from "../../assets/images/keyDataIcons/burger.svg"
+import iconChicken from "../../assets/images/keyDataIcons/chicken.svg"
+import iconApple from "../../assets/images/keyDataIcons/apple.svg"
+
+import "./index.css"
 
 function KeyData({ type, value }) {
   let icon = ""

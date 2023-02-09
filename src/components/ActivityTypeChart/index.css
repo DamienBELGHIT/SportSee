@@ -1,0 +1,12 @@
+.activity-type-chart {
+  width: 30%;
+  aspect-ratio: 1/1;
+  background: #282d30;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .activity-type-chart {
+    width: 32%;
+  }
+}

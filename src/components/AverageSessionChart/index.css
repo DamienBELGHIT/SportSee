@@ -1,6 +1,6 @@
 .average-session-chart {
-  width: 258px;
-  height: 263px;
+  width: 30%;
+  aspect-ratio: 1/1;
   background-color: #ff0000;
   color: rgba(255, 255, 255, 0.5);
   border-radius: 5px;
@@ -9,10 +9,10 @@
 
 .average-session-chart h3 {
   position: absolute;
-  top: 30px;
+  top: 5%;
   left: 34px;
   font-size: 16px;
-  width: 50%;
+  width: 65%;
   margin: 0;
 }
 
@@ -28,4 +28,10 @@
   height: 160px;
   position: absolute;
   bottom: 0;
+}
+
+@media only screen and (max-width: 1280px) {
+  .average-session-chart {
+    width: 32%;
+  }
 }

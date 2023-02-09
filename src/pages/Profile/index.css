@@ -1,5 +1,5 @@
 .profile-main {
-  margin: 0 90px;
+  margin: 0 5%;
 }
 
 .profile-main h1 {
@@ -13,7 +13,7 @@
 .keyDatas {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 #profile-description {
@@ -22,10 +22,18 @@
 }
 
 .mini-charts {
+  margin-top: 30px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .charts {
   width: 80%;
+  margin-right: 31px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .charts {
+    margin-right: 0;
+  }
 }
