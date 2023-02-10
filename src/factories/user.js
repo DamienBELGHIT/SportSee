@@ -1,6 +1,27 @@
+/**
+ * Transform the data to match the user format
+ * @param {UserObject} data Contains all data from the user
+ * @returns A function allowing to get all the user data as an object
+ */
 export default function userFactory(data) {
   const main = data.main.data
 
+  //Translates and format the activity data for the LineChart
+  const tickDays = {
+    1: "L",
+    2: "M",
+    3: "M",
+    4: "J",
+    5: "V",
+    6: "S",
+    7: "D",
+  }
+  const activityDatas = data.average_session.data.sessions
+  activityDatas.map((dataElem) => {
+    dataElem.day = tickDays[dataElem.day]
+  })
+
+  //Translates and format the performance data for the RadarChart
   const performanceKinds = {
     1: "Cardio",
     2: "Energie",
@@ -10,11 +31,13 @@ export default function userFactory(data) {
     6: "Intensité",
   }
   const performanceDatas = data.performance.data.data
-  performanceDatas.map((dataElem) => {
-    Number.isInteger(dataElem.kind) &&
-      (dataElem.kind = performanceKinds[dataElem.kind])
+  performanceDatas.reverse().map((dataElem) => {
+    dataElem.kind = performanceKinds[dataElem.kind]
   })
 
+  /**
+   * Get all user data as an object
+   */
   function getUserObject() {
     return {
       firstName: main.userInfos.firstName,
@@ -28,7 +51,7 @@ export default function userFactory(data) {
       proteinCount: main.keyData.proteinCount,
 
       activity: data.activity.data.sessions,
-      average_session: data.average_session.data.sessions,
+      average_session: activityDatas,
       performance: performanceDatas,
     }
   }

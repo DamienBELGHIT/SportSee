@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import {
   BarChart,
   Bar,
@@ -11,6 +12,9 @@ import {
 
 import "./index.css"
 
+/**
+ * Custom tooltip showing the weight in kg and the calorie loss in Kcal of the selected day.
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -24,6 +28,11 @@ const CustomTooltip = ({ active, payload }) => {
   return null
 }
 
+/**
+ * Component for showing the calories and kg change each day of the user as a BarChart.
+ *
+ * @component
+ */
 export default function ActivityChart({ data }) {
   return (
     <div className="activity-chart">
@@ -82,4 +91,13 @@ export default function ActivityChart({ data }) {
       </ResponsiveContainer>
     </div>
   )
+}
+
+ActivityChart.propTypes = {
+  /**
+   * User's weight and calories loss for each day
+   * @example
+   * [{day: '2020-07-06', kilogram: 78, calories: 162}, {day: '2020-07-07', kilogram: 76, calories: 390}, ...]
+   */
+  data: PropTypes.arrayOf(PropTypes.object),
 }

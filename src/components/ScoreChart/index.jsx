@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import {
   RadialBarChart,
   RadialBar,
@@ -7,6 +9,9 @@ import {
 
 import "./index.css"
 
+/**
+ * Custom label showing score percentage in the middle of the chart.
+ */
 const CustomLabel = ({ cx, cy, value }) => {
   return (
     <text
@@ -30,6 +35,11 @@ const CustomLabel = ({ cx, cy, value }) => {
   )
 }
 
+/**
+ * Component for showing the percentage score of the user as a RadialChart.
+ *
+ * @component
+ */
 export default function ScoreChart({ data }) {
   return (
     <div className="score-chart">
@@ -55,4 +65,13 @@ export default function ScoreChart({ data }) {
       </ResponsiveContainer>
     </div>
   )
+}
+
+ScoreChart.propTypes = {
+  /**
+   * User's score value and color
+   * @example
+   * [{score: 0.12, fill: 'red'}]
+   */
+  data: PropTypes.arrayOf(PropTypes.object),
 }

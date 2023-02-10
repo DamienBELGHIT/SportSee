@@ -1,3 +1,5 @@
+import PropTypes from "prop-types"
+
 import iconEnergy from "../../assets/images/keyDataIcons/energy.svg"
 import iconBurger from "../../assets/images/keyDataIcons/burger.svg"
 import iconChicken from "../../assets/images/keyDataIcons/chicken.svg"
@@ -5,7 +7,11 @@ import iconApple from "../../assets/images/keyDataIcons/apple.svg"
 
 import "./index.css"
 
-function KeyData({ type, value }) {
+/**
+ * Component for showing the keyvalue of the user within a block alongside an icon
+ * @component
+ */
+export default function KeyData({ type, value }) {
   let icon = ""
   let iconColor = ""
   switch (type) {
@@ -41,4 +47,7 @@ function KeyData({ type, value }) {
   )
 }
 
-export default KeyData
+KeyData.propTypes = {
+  type: PropTypes.string,
+  value: PropTypes.number,
+}

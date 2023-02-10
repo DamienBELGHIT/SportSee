@@ -1,0 +1,14 @@
+.horizontal-header {
+  background-color: #020203;
+  width: 100%;
+  height: 90px;
+}
+
+.vertical-header {
+  background-color: #020203;
+  height: 100%;
+  width: 8%;
+  max-width: 90px;
+  position: fixed;
+  top: 0;
+}

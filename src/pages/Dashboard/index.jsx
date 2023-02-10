@@ -9,7 +9,12 @@ import { getAllUserData } from "../../utils/services/APIService"
 
 import "./index.css"
 
-function Profile() {
+/**
+ * Component showing the page with all user data
+ *
+ * @component
+ */
+function Dashboard() {
   const { userID } = useParams()
   const [userData, setUserData] = useState(undefined)
   const [isLoading, setLoading] = useState(true)
@@ -53,4 +58,4 @@ function Profile() {
   )
 }
 
-export default Profile
+export default Dashboard

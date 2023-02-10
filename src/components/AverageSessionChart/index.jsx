@@ -1,7 +1,11 @@
+import PropTypes from "prop-types"
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts"
 
 import "./index.css"
 
+/**
+ * Custom tooltip showing the sessions duration in minutes of the selected day.
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -14,6 +18,11 @@ const CustomTooltip = ({ active, payload }) => {
   return null
 }
 
+/**
+ * Component for showing the average session duration of the user as a LineChart.
+ *
+ * @component
+ */
 export default function AverageSessionChart({ data }) {
   return (
     <div className="average-session-chart">
@@ -31,7 +40,12 @@ export default function AverageSessionChart({ data }) {
               bottom: 5,
             }}
           >
-            <XAxis dataKey="day" stroke="rgba(255,255,255,0.5)" />
+            <XAxis
+              dataKey="day"
+              stroke="rgba(255,255,255,0.5)"
+              axisLine={false}
+              tickLine={false}
+            />
             <Tooltip content={CustomTooltip} />
             <Line
               type="monotone"
@@ -45,4 +59,13 @@ export default function AverageSessionChart({ data }) {
       </div>
     </div>
   )
+}
+
+AverageSessionChart.propTypes = {
+  /**
+   * User's session duration for each day
+   * @example
+   * [{day: 'L', sessionLength: 30}, {day: 'M', sessionLength: 23}, ...]
+   */
+  data: PropTypes.arrayOf(PropTypes.object),
 }
