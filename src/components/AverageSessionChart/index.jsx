@@ -1,5 +1,13 @@
 import PropTypes from "prop-types"
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts"
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Rectangle,
+} from "recharts"
 
 import "./index.css"
 
@@ -10,12 +18,28 @@ const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
       <div className="average-session-tooltip">
-        <p>{payload[0].value + "min"}</p>
+        <span>{payload[0].value + "min"}</span>
       </div>
     )
   }
 
   return null
+}
+
+/**
+ * Custom tooltip cursor darkening the graph past it.
+ */
+const CustomCursor = ({ points, width }) => {
+  const { x } = points[0]
+  return (
+    <Rectangle
+      fill="black"
+      fillOpacity={0.1}
+      x={x}
+      width={width}
+      height={300}
+    />
+  )
 }
 
 /**
@@ -40,20 +64,28 @@ export default function AverageSessionChart({ data }) {
               bottom: 5,
             }}
           >
+            <Line
+              type="monotone"
+              dataKey="sessionLength"
+              stroke="white"
+              strokeOpacity={0.7}
+              dot=""
+              strokeWidth="2"
+            />
             <XAxis
               dataKey="day"
               stroke="rgba(255,255,255,0.5)"
               axisLine={false}
               tickLine={false}
             />
-            <Tooltip content={CustomTooltip} />
-            <Line
-              type="monotone"
-              dataKey="sessionLength"
-              stroke="white"
-              dot=""
-              strokeWidth="2"
+            <YAxis
+              domain={[0, 100]}
+              axisLine={false}
+              tickLine={false}
+              tick={false}
+              width={0}
             />
+            <Tooltip content={CustomTooltip} cursor={<CustomCursor />} />
           </LineChart>
         </ResponsiveContainer>
       </div>
