@@ -6,6 +6,10 @@
   font-size: 48px;
 }
 
+.profile-main h2 {
+  font-size: 18px;
+}
+
 .profile-name {
   color: red;
 }

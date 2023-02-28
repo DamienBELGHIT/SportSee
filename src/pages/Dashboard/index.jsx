@@ -35,6 +35,7 @@ function Dashboard() {
           <h1>
             Bonjour <span className="profile-name">{userData.firstName}</span>
           </h1>
+          <h2>Félicitations ! Vous avez explosé vos objectifs hier 👏</h2>
 
           <div id="profile-description">
             <div className="charts">
