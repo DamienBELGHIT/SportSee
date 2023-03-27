@@ -10,7 +10,7 @@ import {
 import "./index.css"
 
 /**
- * Component for showing the progress of the user in each activity kind as a RadarChart.
+ * Component for showing the progress of the user in each activity type as a RadarChart.
  *
  * @component
  */
